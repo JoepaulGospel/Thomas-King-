@@ -2,104 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thomas King | Luxury Real Estate Nigeria</title>
-  <meta name="description" content="Exclusive luxury properties in Nigeria. Premium homes, estates, and commercial spaces starting from ₦70,000,000."/>
-  <meta name="theme-color" content="#000000"/>
+  <meta name="description" content="Exclusive luxury properties in Nigeria. Premium homes starting from ₦70,000,000."/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
       color: #000;
       background: #fff;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
     img { max-width: 100%; height: auto; display: block; object-fit: cover; }
-    a { text-decoration: none; color: inherit; transition: all 0.3s; -webkit-tap-highlight-color: transparent; }
-    ul { list-style: none; }
-    button, input, textarea, select { font: inherit; }
-
-    /* ===== COLORS (Black & White Theme) ===== */
+    a { text-decoration: none; color: inherit; transition: all 0.3s; }
+    
     :root {
       --black: #000000;
-      --dark-gray: #1a1a1a;
-      --medium-gray: #4a4a4a;
-      --light-gray: #f5f5f5;
       --white: #ffffff;
+      --light-gray: #f5f5f5;
       --border: #e0e0e0;
     }
 
-    /* ===== ANIMATIONS ===== */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-30px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(30px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.15); }
-      50% { box-shadow: 0 0 0 12px rgba(0, 0, 0, 0); }
-    }
-    @keyframes counterPop {
-      0% { opacity: 0; transform: scale(0.8); }
-      50% { transform: scale(1.05); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
     }
     @keyframes imageLoad {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
-    /* Animation utility classes */
-    .animate-on-scroll {
-      opacity: 1; /* FIXED: Now visible by default */
-      transform: translateY(0);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .animate-on-scroll.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .animate-on-scroll.hidden {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    .animate-delay-1 { transition-delay: 0.1s; }
-    .animate-delay-2 { transition-delay: 0.2s; }
-    .animate-delay-3 { transition-delay: 0.3s; }
-    .animate-delay-4 { transition-delay: 0.4s; }
-    .animate-delay-5 { transition-delay: 0.5s; }
-    .animate-delay-6 { transition-delay: 0.6s; }
-
-    /* ===== UTILITIES ===== */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -107,91 +45,37 @@
       padding: 0 1.25rem;
     }
     .section { padding: 4rem 0; }
-    .text-center { text-align: center; }
-    .text-black { color: var(--black); }
     
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 1rem 2rem;
-      min-height: 50px;
-      min-width: 150px;
       background: var(--black);
       color: var(--white);
       border: 2px solid var(--black);
       font-weight: 600;
-      border-radius: 0;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 1rem;
-      touch-action: manipulation;
-      position: relative;
-      overflow: hidden;
-      letter-spacing: 0.5px;
       text-transform: uppercase;
       font-size: 0.85rem;
-    }
-    .btn::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: rgba(255,255,255,0.2);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.5s, height 0.5s;
-    }
-    .btn:active::after {
-      width: 300px;
-      height: 300px;
-      transition: 0s;
+      letter-spacing: 0.5px;
     }
     .btn:hover {
       background: var(--white);
       color: var(--black);
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-    .btn:active {
-      transform: translateY(0);
     }
     .btn-outline {
       background: transparent;
       color: var(--black);
-      border: 2px solid var(--black);
     }
     .btn-outline:hover {
       background: var(--black);
       color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-    .btn-large {
-      padding: 1.1rem 2.5rem;
-      font-size: 0.9rem;
-      min-width: 180px;
-    }
-    
-    .section-title {
-      font-size: clamp(1.75rem, 6vw, 2.5rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-    }
-    .section-subtitle {
-      font-size: clamp(0.95rem, 3vw, 1.15rem);
-      color: var(--medium-gray);
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.6;
     }
 
-    /* ===== HEADER ===== */
+    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -200,13 +84,7 @@
       background: var(--white);
       border-bottom: 1px solid var(--border);
       z-index: 1000;
-      padding: 0.9rem 0;
-      transition: box-shadow 0.3s ease, padding 0.3s ease, background 0.3s ease;
-    }
-    header.scrolled {
-      padding: 0.6rem 0;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      background: rgba(255,255,255,0.98);
+      padding: 1rem 0;
     }
     .nav {
       display: flex;
@@ -214,330 +92,118 @@
       align-items: center;
     }
     .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      font-size: clamp(1.2rem, 4vw, 1.5rem);
-      font-weight: 800;
-      color: var(--black);
-      letter-spacing: -0.5px;
-      transition: transform 0.3s ease;
-    }
-    .logo:hover {
-      transform: scale(1.02);
     }
     .logo-icon {
       width: 40px;
       height: 40px;
       background: var(--black);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--white);
       font-weight: 900;
-      font-size: 1.1rem;
-      border-radius: 2px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-    .nav-links a {
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: var(--black);
-      transition: color 0.2s, transform 0.2s;
-      padding: 0.5rem 0;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      position: relative;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 0.5px;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--black);
-      transition: width 0.3s ease;
-    }
-    .nav-links a:hover {
-      color: var(--black);
-      transform: translateY(-2px);
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      min-width: 44px;
-      min-height: 44px;
-      color: var(--black);
-      transition: transform 0.3s ease;
-    }
-    .mobile-toggle:hover {
-      transform: scale(1.1);
-    }
-    .mobile-toggle svg {
-      transition: transform 0.3s ease;
-    }
-    .mobile-toggle.active svg {
-      transform: rotate(90deg);
     }
 
-    /* ===== HERO ===== */
+    /* Hero */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: var(--white);
-      padding-top: 70px;
-      padding-bottom: 3rem;
+      background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+      padding-top: 80px;
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -30%;
-      right: -10%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%);
-      pointer-events: none;
-      animation: pulse 10s ease-in-out infinite;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: -20%;
-      left: -5%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0,0,0,0.02) 0%, transparent 70%);
-      pointer-events: none;
-      animation: float 12s ease-in-out infinite reverse;
-    }
     .hero-content {
-      position: relative;
-      z-index: 10;
-      width: 100%;
       max-width: 650px;
+      z-index: 10;
+      position: relative;
     }
     .hero-label {
-      font-size: clamp(0.8rem, 2.5vw, 0.95rem);
       font-weight: 600;
-      color: var(--black);
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      display: inline-block;
-      animation: slideInLeft 0.6s ease forwards;
-      opacity: 0;
       border-bottom: 2px solid var(--black);
+      display: inline-block;
       padding-bottom: 4px;
+      animation: fadeInUp 0.6s ease;
     }
     .hero h1 {
-      font-size: clamp(2rem, 7vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 900;
       margin-bottom: 1.5rem;
       line-height: 1.1;
-      letter-spacing: -0.04em;
-      color: var(--black);
-      animation: fadeInUp 0.8s ease forwards;
+      animation: fadeInUp 0.8s ease 0.2s forwards;
       opacity: 0;
-      animation-delay: 0.2s;
-    }
-    .hero h1 span {
-      position: relative;
-      display: inline-block;
-    }
-    .hero h1 span::after {
-      content: '';
-      position: absolute;
-      bottom: 8px;
-      left: 0;
-      width: 100%;
-      height: 12px;
-      background: rgba(0, 0, 0, 0.08);
-      z-index: -1;
-      animation: slideInRight 0.6s ease forwards;
-      opacity: 0;
-      animation-delay: 0.5s;
     }
     .hero p {
-      font-size: clamp(1rem, 3vw, 1.25rem);
-      color: var(--medium-gray);
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-      max-width: 550px;
-      animation: fadeInUp 0.8s ease forwards;
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease 0.4s forwards;
       opacity: 0;
-      animation-delay: 0.4s;
     }
     .hero-ctas {
       display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
+      gap: 1rem;
       margin-bottom: 3rem;
-      animation: fadeInUp 0.8s ease forwards;
+      flex-wrap: wrap;
+    }
+    .hero-image {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50%;
+      max-width: 700px;
+      height: 70vh;
+      overflow: hidden;
+      animation: fadeInUp 1s ease 0.5s forwards;
       opacity: 0;
-      animation-delay: 0.6s;
     }
-    .hero-ctas .btn {
-      flex: 1;
-      min-width: 140px;
-    }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      animation: fadeInUp 0.8s ease forwards;
-      opacity: 0;
-      animation-delay: 0.8s;
-    }
-    .stat {
-      text-align: center;
-      padding: 1.25rem 1rem;
-      background: var(--light-gray);
-      border: 1px solid var(--border);
-    }
-    .stat:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-      border-color: var(--black);
-    }
-    .stat-number {
-      font-size: clamp(1.75rem, 5vw, 2.5rem);
-      font-weight: 900;
-      color: var(--black);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-      animation: counterPop 0.6s ease forwards;
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    .stat-number.is-visible {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .stat-label {
-      color: var(--medium-gray);
-      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-size: 0.75rem;
-    }
-    .hero-visual {
-      display: none;
-      animation: float 6s ease-in-out infinite;
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: imageLoad 1s ease;
     }
 
-    /* ===== PROPERTIES (FIXED) ===== */
-    .properties {
-      background: var(--white);
-    }
-    .properties-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .properties-filter {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      padding: 0.5rem 1.25rem;
-      background: var(--light-gray);
-      border: 1px solid var(--border);
-      border-radius: 0;
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-size: 0.75rem;
-    }
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--black);
-      color: var(--white);
-      border-color: var(--black);
-    }
+    /* Properties */
     .properties-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
     .property-card {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 0;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      opacity: 1; /* FIXED: Visible by default */
-      transform: translateY(0);
-      display: flex;
-      flex-direction: column;
-    }
-    .property-card.is-visible {
-      opacity: 1;
-      transform: translateY(0);
+      transition: all 0.4s;
     }
     .property-card:hover {
-      transform: translateY(-8px) !important;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
       border-color: var(--black);
     }
     .property-image {
-      height: 220px;
-      background: var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      height: 280px;
       overflow: hidden;
+      position: relative;
     }
     .property-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      animation: imageLoad 0.6s ease forwards;
+      transition: transform 0.5s ease;
     }
-    .property-image .placeholder {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .property-image .placeholder svg {
-      width: 60px;
-      height: 60px;
-      stroke: var(--medium-gray);
-      stroke-width: 1.5;
-      opacity: 0.6;
+    .property-card:hover .property-image img {
+      transform: scale(1.05);
     }
     .property-badge {
       position: absolute;
@@ -545,1300 +211,241 @@
       left: 1rem;
       background: var(--black);
       color: var(--white);
-      padding: 0.35rem 0.85rem;
+      padding: 0.4rem 1rem;
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
       z-index: 3;
     }
     .property-content {
       padding: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
     }
     .property-location {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--medium-gray);
+      color: #666;
       font-size: 0.85rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      font-size: 0.75rem;
-    }
-    .property-location svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--medium-gray);
     }
     .property-title {
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--black);
-      line-height: 1.3;
+      margin-bottom: 0.75rem;
     }
     .property-price {
-      font-size: clamp(1.25rem, 4vw, 1.5rem);
+      font-size: 1.5rem;
       font-weight: 800;
-      color: var(--black);
-      margin: 0.75rem 0 1rem;
-      letter-spacing: -0.02em;
-    }
-    .property-price span {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--medium-gray);
-      margin-left: 0.25rem;
+      margin: 1rem 0;
     }
     .property-features {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       margin: 1rem 0;
       padding-top: 1rem;
       border-top: 1px solid var(--border);
-      font-size: 0.85rem;
-      color: var(--medium-gray);
-    }
-    .property-features span {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-    .property-features svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--medium-gray);
-    }
-    .property-card .btn {
-      margin-top: auto;
-      width: 100%;
-      justify-content: center;
+      color: #666;
+      font-size: 0.9rem;
     }
 
-    /* ===== ABOUT ===== */
+    /* About */
     .about {
       background: var(--black);
       color: var(--white);
     }
-    .about .section-title {
-      color: var(--white);
-    }
-    .about .section-subtitle {
-      color: #999;
-    }
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
       align-items: center;
-      margin-top: 2rem;
     }
-    .about-content h3 {
-      font-size: clamp(1.3rem, 4vw, 1.75rem);
-      font-weight: 800;
-      margin-bottom: 1.25rem;
-      line-height: 1.2;
-    }
-    .about-content p {
-      color: #ccc;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .about-stat {
-      text-align: center;
-      padding: 1.5rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    .about-stat-number {
-      font-size: clamp(1.75rem, 5vw, 2.25rem);
-      font-weight: 900;
-      margin-bottom: 0.25rem;
-    }
-    .about-stat-label {
-      color: #999;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .about-visual {
-      background: var(--white);
-      border-radius: 0;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+    .about-image {
+      height: 500px;
       overflow: hidden;
     }
-    .about-visual::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-      animation: shimmer 3s infinite linear;
-      background-size: 200% 100%;
-    }
-    .about-visual svg {
-      width: 80px;
-      height: 80px;
-      stroke: var(--medium-gray);
-      stroke-width: 1.5;
-      opacity: 0.5;
-      z-index: 2;
-    }
-
-    /* ===== FEATURES ===== */
-    .features {
-      background: var(--white);
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-    .feature {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      background: var(--light-gray);
-      border: 1px solid var(--border);
-      opacity: 1; /* FIXED: Visible by default */
-      transform: translateY(0);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .feature.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .feature:hover {
-      background: var(--black);
-      color: var(--white);
-      transform: translateY(-8px) !important;
-      border-color: var(--black);
-    }
-    .feature:hover .feature-icon {
-      background: var(--white);
-    }
-    .feature:hover .feature-icon svg {
-      stroke: var(--black);
-    }
-    .feature:hover h3,
-    .feature:hover p {
-      color: var(--white);
-    }
-    .feature-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 1.25rem;
-      background: var(--black);
-      border-radius: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .feature:hover .feature-icon {
-      transform: scale(1.1) rotate(5deg);
-    }
-    .feature-icon svg {
-      width: 32px;
-      height: 32px;
-      stroke: var(--white);
-      stroke-width: 2;
-      transition: stroke 0.3s ease;
-    }
-    .feature h3 {
-      font-size: clamp(1rem, 3vw, 1.2rem);
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--black);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-size: 0.9rem;
-    }
-    .feature p {
-      color: var(--medium-gray);
-      line-height: 1.6;
-      font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-    }
-
-    /* ===== CONTACT ===== */
-    .contact {
-      background: var(--white);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-    .contact-card {
-      background: var(--light-gray);
-      border: 1px solid var(--border);
-      padding: 2rem 1.75rem;
-      text-align: center;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      opacity: 1; /* FIXED: Visible by default */
-      transform: translateY(0);
-    }
-    .contact-card.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .contact-card:hover {
-      background: var(--black);
-      color: var(--white);
-      transform: translateY(-8px) !important;
-      border-color: var(--black);
-    }
-    .contact-card:hover .contact-icon {
-      background: var(--white);
-    }
-    .contact-card:hover .contact-icon svg {
-      stroke: var(--black);
-    }
-    .contact-card:hover h3,
-    .contact-card:hover p,
-    .contact-card:hover a {
-      color: var(--white);
-    }
-    .contact-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 1.25rem;
-      background: var(--black);
-      border-radius: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-    .contact-card:hover .contact-icon {
-      transform: scale(1.1) rotate(5deg);
-    }
-    .contact-icon svg {
-      width: 28px;
-      height: 28px;
-      stroke: var(--white);
-      stroke-width: 2;
-      transition: stroke 0.3s ease;
-    }
-    .contact-card h3 {
-      font-size: clamp(1.05rem, 3vw, 1.15rem);
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-      color: var(--black);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-size: 0.9rem;
-    }
-    .contact-card p {
-      color: var(--medium-gray);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      margin-bottom: 0.5rem;
-    }
-    .contact-card a {
-      color: var(--black);
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    
-    .contact-form {
-      background: var(--light-gray);
-      border: 1px solid var(--border);
-      padding: 2.5rem;
-      margin-top: 2rem;
-      opacity: 1; /* FIXED: Visible by default */
-      transform: translateY(0);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .contact-form.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .contact-form h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .form-group label {
-      font-size: 0.85rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--medium-gray);
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      padding: 0.9rem 1.25rem;
-      border: 1px solid var(--border);
-      background: var(--white);
-      font-size: 1rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: var(--black);
-      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
-    }
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .contact-form .btn {
+    .about-image img {
       width: 100%;
-      margin-top: 0.5rem;
+      height: 100%;
+      object-fit: cover;
     }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--black);
-      color: var(--white);
-      padding: 3rem 0 1.5rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .footer-col h4 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      position: relative;
-      padding-bottom: 0.75rem;
-    }
-    .footer-col h4::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background: var(--white);
-    }
-    .footer-col p {
-      color: #999;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .footer-links a {
-      color: #999;
-      font-size: 0.9rem;
-      transition: color 0.2s, transform 0.2s;
-      position: relative;
-      padding-left: 1rem;
-    }
-    .footer-links a::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      opacity: 0;
-      transition: opacity 0.2s, transform 0.2s;
-      transform: translateX(-5px);
-    }
-    .footer-links a:hover {
-      color: var(--white);
-      transform: translateX(5px);
-    }
-    .footer-links a:hover::before {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .footer-social {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .footer-social a {
-      width: 40px;
-      height: 40px;
-      background: #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      border: 1px solid #333;
-    }
-    .footer-social a:hover {
-      background: var(--white);
-      transform: translateY(-3px);
-    }
-    .footer-social a:hover svg {
-      stroke: var(--black);
-    }
-    .footer-social svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--white);
-      stroke-width: 2;
-      transition: stroke 0.3s ease;
-    }
-    .footer-bottom {
-      border-top: 1px solid #333;
-      padding-top: 1.75rem;
-      text-align: center;
-      color: #666;
-      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
-      animation: fadeIn 1s ease forwards;
-      opacity: 0;
-      animation-delay: 0.5s;
-    }
-
-    /* ===== TABLET (768px and up) ===== */
-    @media (min-width: 768px) {
-      .container { padding: 0 2rem; }
-      .section { padding: 5rem 0; }
-      .hero { padding-top: 80px; padding-bottom: 4rem; }
-      .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
-      .hero-stats { gap: 2rem; }
-      .properties-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
-      .features-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
-      .contact-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* ===== DESKTOP (1024px and up) ===== */
-    @media (min-width: 1024px) {
-      .hero-visual {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 45%;
-        max-width: 600px;
-        height: 550px;
-        background: var(--light-gray);
-        border: 1px solid var(--border);
-        overflow: hidden;
-        animation: slideInRight 1s ease forwards;
-        opacity: 0;
-        animation-delay: 0.5s;
-      }
-      .hero-visual::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-        animation: shimmer 3s infinite linear;
-        background-size: 200% 100%;
-      }
-      .hero-visual svg {
-        width: 100px;
-        height: 100px;
-        stroke: var(--medium-gray);
-        stroke-width: 1.5;
-        opacity: 0.4;
-        z-index: 2;
-        position: relative;
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero-image {
+        display: none;
       }
       .hero-content {
-        max-width: 52%;
-      }
-      .hero p {
         max-width: 100%;
       }
-      .hero-ctas {
-        flex-wrap: nowrap;
-      }
-      .hero-ctas .btn {
-        flex: none;
-      }
-      .properties-grid { grid-template-columns: repeat(3, 1fr); }
-      .features-grid { grid-template-columns: repeat(4, 1fr); }
-      .contact-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
+        grid-template-columns: 1fr;
       }
-    }
-
-    /* ===== MOBILE NAVIGATION ===== */
-    @media (max-width: 767px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        flex-direction: column;
-        padding: 1.5rem;
-        border-bottom: 1px solid var(--border);
-        gap: 0.75rem;
-        animation: fadeIn 0.3s ease;
+      .properties-grid {
+        grid-template-columns: 1fr;
       }
-      .nav-links.active { 
-        display: flex; 
-      }
-      .nav-links a { 
-        width: 100%;
-        padding: 0.85rem 0;
-        border-bottom: 1px solid var(--border);
-        justify-content: flex-start;
-      }
-      .nav-links a:last-child {
-        border-bottom: none;
-      }
-      .mobile-toggle { 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-      }
-      .properties-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .properties-filter {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-      }
-      .filter-btn {
-        flex-shrink: 0;
-      }
-    }
-
-    /* ===== SMALL MOBILE (480px and below) ===== */
-    @media (max-width: 480px) {
-      .container { padding: 0 1rem; }
-      .section { padding: 3.5rem 0; }
-      .hero { padding-top: 65px; padding-bottom: 2.5rem; }
-      .hero h1 { font-size: 1.8rem; }
-      .hero p { font-size: 1rem; margin-bottom: 2rem; }
-      .hero-ctas { flex-direction: column; }
-      .hero-ctas .btn { width: 100%; }
-      .hero-stats { grid-template-columns: 1fr; gap: 1rem; }
-      .stat { padding: 1rem; }
-      .section-title { font-size: 1.65rem; }
-      .section-subtitle { font-size: 0.9rem; margin-bottom: 2rem; }
-      .properties-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .property-card { padding: 0; }
-      .property-image { height: 200px; }
-      .property-content { padding: 1.25rem; }
-      .features-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-      .feature { padding: 1.75rem 1.25rem; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-card { padding: 1.75rem 1.5rem; }
-      .contact-form { padding: 2rem 1.5rem; }
-      .footer-grid { grid-template-columns: 1fr; text-align: center; }
-      .footer-col h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .footer-links { align-items: center; }
-      .footer-social { justify-content: center; }
-    }
-
-    /* ===== TOUCH OPTIMIZATIONS ===== */
-    @media (hover: none) and (pointer: coarse) {
-      .btn:hover { transform: none; }
-      .property-card:hover { transform: none !important; }
-      .feature:hover { transform: none !important; }
-      .contact-card:hover { transform: none !important; }
-      a:hover { opacity: 1; transform: none !important; }
-      .stat:hover { transform: none; }
-    }
-
-    /* ===== REDUCED MOTION SUPPORT ===== */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      .hero-visual, .about-visual { animation: none !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="container nav">
       <a href="#" class="logo">
         <div class="logo-icon">TK</div>
         Thomas King
       </a>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#properties">Properties</a>
-        <a href="#about">About</a>
-        <a href="#features">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn" style="padding: 0.75rem 1.5rem; font-size: 0.8rem;">Schedule Viewing</a>
+      <nav>
+        <a href="#properties" class="btn">View Properties</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
+  <section class="hero">
     <div class="container">
       <div class="hero-content">
         <p class="hero-label">Luxury Real Estate</p>
-        <h1>Exceptional Properties for <span>Discerning Clients</span></h1>
-        <p>Thomas King curates Nigeria's most exclusive residential and commercial properties. From waterfront estates to urban penthouses, we deliver unparalleled luxury and service.</p>
+        <h1>Exceptional Properties for Discerning Clients</h1>
+        <p>Thomas King curates Nigeria's most exclusive residential and commercial properties. From waterfront estates to urban penthouses.</p>
         <div class="hero-ctas">
           <a href="#properties" class="btn btn-large">View Properties</a>
-          <a href="#contact" class="btn btn-outline btn-large">Contact Agent</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-number" data-target="150">0</div>
-            <div class="stat-label">Properties</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-target="98">0</div>
-            <div class="stat-label">Client Satisfaction %</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-target="12">0</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
+          <a href="#contact" class="btn btn-outline btn-large">Contact Us</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <svg viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/>
-          <path d="M3 9h18" stroke-width="1.5"/>
-          <path d="M9 21V12h6v9" stroke-width="1.5"/>
-          <circle cx="12" cy="7" r="2" stroke-width="1.5"/>
-        </svg>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Luxury Modern Mansion">
       </div>
     </div>
   </section>
 
-  <!-- Properties -->
   <section class="section properties" id="properties">
     <div class="container">
-      <div class="properties-header">
-        <div>
-          <h2 class="section-title">Featured <span class="text-black">Properties</span></h2>
-          <p class="section-subtitle" style="margin: 0; text-align: left;">Curated luxury homes starting from ₦70,000,000</p>
-        </div>
-        <div class="properties-filter">
-          <button class="filter-btn active">All</button>
-          <button class="filter-btn">Residential</button>
-          <button class="filter-btn">Commercial</button>
-          <button class="filter-btn">Land</button>
-        </div>
-      </div>
+      <h2 class="section-title text-center" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase;">Featured Properties</h2>
+      <p style="text-align: center; color: #666; margin-bottom: 2rem;">Curated luxury homes starting from ₦70,000,000</p>
       
       <div class="properties-grid">
         
-        <!-- Property 1 -->
         <div class="property-card">
           <div class="property-image">
             <span class="property-badge">New</span>
-            <div class="placeholder">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="1.5"/>
-                <polyline points="9 22 9 12 15 12 15 22" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <!-- Replace with actual image: <img src="property1.jpg" alt="Waterfront Villa" loading="lazy"> -->
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80" alt="Waterfront Villa">
           </div>
           <div class="property-content">
-            <div class="property-location">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke-width="2"/></svg>
-              Banana Island, Lagos
-            </div>
+            <div class="property-location">📍 Banana Island, Lagos</div>
             <h3 class="property-title">Waterfront Villa with Private Dock</h3>
-            <div class="property-price">₦285,000,000 <span>/ asking</span></div>
+            <div class="property-price">₦285,000,000</div>
             <div class="property-features">
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke-width="2"/></svg> 5 Beds</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-width="2"/><polyline points="14 2 14 8 20 8" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke-width="2"/><line x1="16" y1="17" x2="8" y2="17" stroke-width="2"/><polyline points="10 9 9 9 8 9" stroke-width="2"/></svg> 6 Baths</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/></svg> 850 sqm</span>
+              <span>🛏️ 5 Beds</span>
+              <span>🛁 6 Baths</span>
+              <span>📐 850 sqm</span>
             </div>
-            <a href="#contact" class="btn">Schedule Viewing</a>
+            <a href="#contact" class="btn" style="width: 100%;">Schedule Viewing</a>
           </div>
         </div>
-        
-        <!-- Property 2 -->
-        <div class="property-card animate-delay-1">
+
+        <div class="property-card">
           <div class="property-image">
-            <div class="placeholder">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/>
-                <path d="M3 9h18" stroke-width="1.5"/>
-                <path d="M9 21V12h6v9" stroke-width="1.5"/>
-              </svg>
-            </div>
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Modern Penthouse">
           </div>
           <div class="property-content">
-            <div class="property-location">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke-width="2"/></svg>
-              Ikoyi, Lagos
-            </div>
+            <div class="property-location">📍 Ikoyi, Lagos</div>
             <h3 class="property-title">Modern Penthouse with City Views</h3>
-            <div class="property-price">₦195,000,000 <span>/ asking</span></div>
+            <div class="property-price">₦195,000,000</div>
             <div class="property-features">
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke-width="2"/></svg> 4 Beds</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-width="2"/><polyline points="14 2 14 8 20 8" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke-width="2"/><line x1="16" y1="17" x2="8" y2="17" stroke-width="2"/><polyline points="10 9 9 9 8 9" stroke-width="2"/></svg> 5 Baths</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/></svg> 420 sqm</span>
+              <span>🛏️ 4 Beds</span>
+              <span>🛁 5 Baths</span>
+              <span>📐 420 sqm</span>
             </div>
-            <a href="#contact" class="btn">Schedule Viewing</a>
+            <a href="#contact" class="btn" style="width: 100%;">Schedule Viewing</a>
           </div>
         </div>
-        
-        <!-- Property 3 - Starting Price -->
-        <div class="property-card animate-delay-2">
+
+        <div class="property-card">
           <div class="property-image">
             <span class="property-badge">From ₦70M</span>
-            <div class="placeholder">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M3 21v-4l4-4m0 0l4 4m-4-4v8m8-8l4 4m-4-4l-4 4m4-4v8m-8-8a4 4 0 118 0v8a4 4 0 11-8 0z" stroke-width="1.5"/>
-              </svg>
-            </div>
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Luxury Townhouses">
           </div>
           <div class="property-content">
-            <div class="property-location">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke-width="2"/></svg>
-              Lekki Phase 1, Lagos
-            </div>
+            <div class="property-location">📍 Lekki Phase 1, Lagos</div>
             <h3 class="property-title">Luxury Townhouses Collection</h3>
-            <div class="property-price">₦70,000,000 <span>/ starting</span></div>
+            <div class="property-price">₦70,000,000 <span style="font-size: 0.9rem; font-weight: 400; color: #666;">/ starting</span></div>
             <div class="property-features">
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke-width="2"/></svg> 3-4 Beds</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-width="2"/><polyline points="14 2 14 8 20 8" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke-width="2"/><line x1="16" y1="17" x2="8" y2="17" stroke-width="2"/><polyline points="10 9 9 9 8 9" stroke-width="2"/></svg> 3-4 Baths</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/></svg> 280-350 sqm</span>
+              <span>🛏️ 3-4 Beds</span>
+              <span>🛁 3-4 Baths</span>
+              <span>📐 280-350 sqm</span>
             </div>
-            <a href="#contact" class="btn">View Collection</a>
+            <a href="#contact" class="btn" style="width: 100%;">View Collection</a>
           </div>
         </div>
-        
-        <!-- Property 4 -->
-        <div class="property-card animate-delay-3">
+
+        <div class="property-card">
           <div class="property-image">
-            <div class="placeholder">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="2" y="2" width="20" height="20" rx="2" stroke-width="1.5"/>
-                <path d="M6 6h12v12H6z" stroke-width="1.5"/>
-                <path d="M9 6v12M15 6v12M6 9h12M6 15h12" stroke-width="1.5"/>
-              </svg>
-            </div>
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Office Space">
           </div>
           <div class="property-content">
-            <div class="property-location">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke-width="2"/></svg>
-              Victoria Island, Lagos
-            </div>
+            <div class="property-location">📍 Victoria Island, Lagos</div>
             <h3 class="property-title">Premium Office Space</h3>
-            <div class="property-price">₦120,000,000 <span>/ asking</span></div>
+            <div class="property-price">₦120,000,000</div>
             <div class="property-features">
-              <span><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/></svg> 600 sqm</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-width="2"/></svg> Grade A</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke-width="2"/><polyline points="12 6 12 12 16 14" stroke-width="2"/></svg> 24/7 Security</span>
+              <span>📐 600 sqm</span>
+              <span>🏢 Grade A</span>
+              <span>🔒 24/7 Security</span>
             </div>
-            <a href="#contact" class="btn">Schedule Viewing</a>
+            <a href="#contact" class="btn" style="width: 100%;">Schedule Viewing</a>
           </div>
         </div>
-        
-        <!-- Property 5 -->
-        <div class="property-card animate-delay-4">
+
+        <div class="property-card">
           <div class="property-image">
-            <div class="placeholder">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="1.5"/>
-                <path d="M9 22V12h6v10" stroke-width="1.5"/>
-                <circle cx="12" cy="16" r="1" fill="currentColor"/>
-              </svg>
-            </div>
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Diplomatic Residence">
           </div>
           <div class="property-content">
-            <div class="property-location">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke-width="2"/></svg>
-              Maitama, Abuja
-            </div>
+            <div class="property-location">📍 Maitama, Abuja</div>
             <h3 class="property-title">Diplomatic Residence</h3>
-            <div class="property-price">₦320,000,000 <span>/ asking</span></div>
+            <div class="property-price">₦320,000,000</div>
             <div class="property-features">
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke-width="2"/></svg> 6 Beds</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-width="2"/><polyline points="14 2 14 8 20 8" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke-width="2"/><line x1="16" y1="17" x2="8" y2="17" stroke-width="2"/><polyline points="10 9 9 9 8 9" stroke-width="2"/></svg> 7 Baths</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/></svg> 1,200 sqm</span>
+              <span>🛏️ 6 Beds</span>
+              <span>🛁 7 Baths</span>
+              <span>📐 1,200 sqm</span>
             </div>
-            <a href="#contact" class="btn">Schedule Viewing</a>
+            <a href="#contact" class="btn" style="width: 100%;">Schedule Viewing</a>
           </div>
         </div>
-        
-        <!-- Property 6 -->
-        <div class="property-card animate-delay-5">
+
+        <div class="property-card">
           <div class="property-image">
-            <div class="placeholder">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/>
-                <path d="M7 7h10v10H7z" stroke-width="1.5"/>
-                <path d="M7 12h10" stroke-width="1.5"/>
-                <path d="M12 7v10" stroke-width="1.5"/>
-              </svg>
-            </div>
+            <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80" alt="Executive Bungalow">
           </div>
           <div class="property-content">
-            <div class="property-location">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke-width="2"/></svg>
-              GRA, Port Harcourt
-            </div>
+            <div class="property-location">📍 GRA, Port Harcourt</div>
             <h3 class="property-title">Executive Bungalow</h3>
-            <div class="property-price">₦95,000,000 <span>/ asking</span></div>
+            <div class="property-price">₦95,000,000</div>
             <div class="property-features">
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke-width="2"/></svg> 4 Beds</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-width="2"/><polyline points="14 2 14 8 20 8" stroke-width="2"/><line x1="16" y1="13" x2="8" y2="13" stroke-width="2"/><line x1="16" y1="17" x2="8" y2="17" stroke-width="2"/><polyline points="10 9 9 9 8 9" stroke-width="2"/></svg> 4 Baths</span>
-              <span><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/></svg> 550 sqm</span>
+              <span>🛏️ 4 Beds</span>
+              <span>🛁 4 Baths</span>
+              <span>📐 550 sqm</span>
             </div>
-            <a href="#contact" class="btn">Schedule Viewing</a>
+            <a href="#contact" class="btn" style="width: 100%;">Schedule Viewing</a>
           </div>
         </div>
-        
-      </div>
-      
-      <div class="text-center" style="margin-top: 3rem;">
-        <a href="#contact" class="btn btn-large">View All Properties</a>
+
       </div>
     </div>
   </section>
 
-  <!-- About -->
   <section class="section about" id="about">
     <div class="container">
-      <h2 class="section-title text-center">About <span class="text-black">Thomas King</span></h2>
-      <p class="section-subtitle text-center" style="color: #aaa;">Redefining luxury real estate in Nigeria since 2014</p>
-      
       <div class="about-grid">
-        <div class="about-content">
-          <h3>Excellence in Every Transaction</h3>
-          <p>Thomas King is Nigeria's premier luxury real estate agency, specializing in high-end residential and commercial properties across Lagos, Abuja, and Port Harcourt.</p>
-          <p>Our client-first approach combines deep market expertise with white-glove service. We don't just sell properties—we curate lifestyles and build lasting relationships with discerning buyers and sellers.</p>
-          <p>Every property in our portfolio undergoes rigorous vetting to ensure it meets our exacting standards for quality, location, and investment potential.</p>
-          
-          <div class="about-stats">
-            <div class="about-stat">
-              <div class="about-stat-number">₦42B+</div>
-              <div class="about-stat-label">Transactions</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-number">250+</div>
-              <div class="about-stat-label">Happy Clients</div>
-            </div>
-          </div>
-          
-          <a href="#contact" class="btn" style="margin-top: 2rem;">Work With Us</a>
+        <div>
+          <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; text-transform: uppercase;">About Thomas King</h2>
+          <p style="color: #ccc; margin-bottom: 1.5rem; line-height: 1.8;">Thomas King is Nigeria's premier luxury real estate agency, specializing in high-end residential and commercial properties across Lagos, Abuja, and Port Harcourt.</p>
+          <p style="color: #ccc; margin-bottom: 2rem; line-height: 1.8;">Our client-first approach combines deep market expertise with white-glove service. We don't just sell properties—we curate lifestyles.</p>
+          <a href="#contact" class="btn">Work With Us</a>
         </div>
-        <div class="about-visual">
-          <svg viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.5"/>
-            <path d="M3 9h18" stroke-width="1.5"/>
-            <circle cx="12" cy="6" r="2" stroke-width="1.5"/>
-            <path d="M8 14h8v6H8z" stroke-width="1.5"/>
-          </svg>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80" alt="Luxury Interior">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="section features" id="features">
-    <div class="container">
-      <h2 class="section-title text-center">Our <span class="text-black">Services</span></h2>
-      <p class="section-subtitle text-center">Comprehensive real estate solutions tailored to your needs</p>
-      
-      <div class="features-grid">
-        
-        <div class="feature">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2"/>
-              <polyline points="9 22 9 12 15 12 15 22" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Property Sales</h3>
-          <p>Expert representation for buyers and sellers of luxury residential and commercial properties.</p>
-        </div>
-        
-        <div class="feature animate-delay-1">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2"/>
-              <line x1="16" y1="2" x2="16" y2="6" stroke-width="2"/>
-              <line x1="8" y1="2" x2="8" y2="6" stroke-width="2"/>
-              <line x1="3" y1="10" x2="21" y2="10" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Property Management</h3>
-          <p>Full-service management for investment properties, ensuring maximum returns and hassle-free ownership.</p>
-        </div>
-        
-        <div class="feature animate-delay-2">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="10" stroke-width="2"/>
-              <polyline points="12 6 12 12 16 14" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Valuation Services</h3>
-          <p>Accurate, data-driven property valuations for sales, purchases, insurance, and investment decisions.</p>
-        </div>
-        
-        <div class="feature animate-delay-3">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke-width="2"/>
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke-width="2"/>
-              <line x1="12" y1="22.08" x2="12" y2="12" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Investment Advisory</h3>
-          <p>Strategic guidance for real estate investors seeking portfolio growth and market opportunities in Nigeria.</p>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <h2 class="section-title text-center">Get In <span class="text-black">Touch</span></h2>
-      <p class="section-subtitle text-center">Ready to find your dream property? Let's connect.</p>
-      
-      <div class="contact-grid">
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Phone</h3>
-          <p><a href="tel:+2348012345678">+234 801 234 5678</a></p>
-          <p><a href="tel:+2348098765432">+234 809 876 5432</a></p>
-        </div>
-        
-        <div class="contact-card animate-delay-1">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-width="2"/>
-              <polyline points="22,6 12,13 2,6" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Email</h3>
-          <p><a href="mailto:info@thomasking.ng">info@thomasking.ng</a></p>
-          <p><a href="mailto:sales@thomasking.ng">sales@thomasking.ng</a></p>
-        </div>
-        
-        <div class="contact-card animate-delay-2">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke-width="2"/>
-              <circle cx="12" cy="10" r="3" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Office</h3>
-          <p>12B Akin Adesola Street</p>
-          <p>Victoria Island, Lagos</p>
-        </div>
-        
-      </div>
-      
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Our agent will contact you within 24 hours.');">
-        <h3>Request a Callback</h3>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email">
-          </div>
-          <div class="form-group">
-            <label for="property">Property Interest</label>
-            <select id="property" name="property">
-              <option value="">Select a property type</option>
-              <option value="residential">Residential</option>
-              <option value="commercial">Commercial</option>
-              <option value="land">Land</option>
-              <option value="investment">Investment</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us about your property needs..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-large">Submit Request</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="logo" style="margin-bottom: 1.25rem; color: var(--white);">
-            <div class="logo-icon">TK</div>
-            Thomas King
-          </div>
-          <p>Nigeria's premier luxury real estate agency. Curating exceptional properties for discerning clients since 2014.</p>
-          <div class="footer-social">
-            <a href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke-width="2"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke-width="2"/>
-                <rect x="2" y="9" width="4" height="12" stroke-width="2"/>
-                <circle cx="4" cy="4" r="2" stroke-width="2"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke-width="2"/>
-                <path d="M9 9l6 6M15 9l-6 6" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Properties</h4>
-          <div class="footer-links">
-            <a href="#properties">Residential</a>
-            <a href="#properties">Commercial</a>
-            <a href="#properties">Land</a>
-            <a href="#properties">New Developments</a>
-            <a href="#properties">Luxury Collection</a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Services</h4>
-          <div class="footer-links">
-            <a href="#features">Property Sales</a>
-            <a href="#features">Property Management</a>
-            <a href="#features">Valuation</a>
-            <a href="#features">Investment Advisory</a>
-            <a href="#features">Relocation Services</a>
-          </div>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Company</h4>
-          <div class="footer-links">
-            <a href="#about">About Us</a>
-            <a href="#">Our Team</a>
-            <a href="#">Careers</a>
-            <a href="#">Press</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2026 Thomas King Real Estate. All rights reserved. | <a href="#" style="color: #999;">Privacy Policy</a> | <a href="#" style="color: #999;">Terms of Service</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    // ===== MOBILE MENU TOGGLE =====
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    mobileToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('active');
-      mobileToggle.classList.toggle('active', isOpen);
-      mobileToggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileToggle.classList.remove('active');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // ===== SMOOTH SCROLL =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // ===== HEADER SCROLL EFFECT =====
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    // ===== SCROLL ANIMATIONS - Intersection Observer =====
-    // FIXED: Now adds animation class instead of relying on visibility
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Add hidden class first, then is-visible for animation
-          entry.target.classList.add('hidden');
-          setTimeout(() => {
-            entry.target.classList.remove('hidden');
-            entry.target.classList.add('is-visible');
-          }, 50);
-          
-          if (entry.target.querySelector('.stat-number')) {
-            animateCounters();
-          }
-          
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Only observe elements with delay classes (for staggered animation)
-    document.querySelectorAll('.animate-delay-1, .animate-delay-2, .animate-delay-3, .animate-delay-4, .animate-delay-5, .animate-delay-6').forEach(el => {
-      observer.observe(el);
-    });
-
-    // ===== COUNTER ANIMATION =====
-    function animateCounters() {
-      const counters = document.querySelectorAll('.stat-number');
-      counters.forEach(counter => {
-        if (counter.classList.contains('is-visible')) return;
-        
-        const target = +counter.getAttribute('data-target');
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-        
-        const updateCounter = () => {
-          current += increment;
-          if (current < target) {
-            counter.textContent = Math.floor(current);
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.textContent = target + (target === 98 ? '%' : target === 150 ? '+' : '');
-            counter.classList.add('is-visible');
-          }
-        };
-        updateCounter();
-      });
-    }
-
-    // ===== FILTER BUTTONS =====
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-
-    // ===== INITIALIZE HERO ANIMATIONS ON LOAD =====
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.querySelectorAll('.stat-number').forEach((num, i) => {
-          setTimeout(() => {
-            num.classList.add('is-visible');
-          }, i * 200);
-        });
-        animateCounters();
-      }, 1200);
-    });
-
-    // ===== PARALLAX-LIGHT FOR HERO VISUAL (Desktop Only) =====
-    document.addEventListener('mousemove', (e) => {
-      const heroVisual = document.querySelector('.hero-visual');
-      if (!heroVisual || window.innerWidth < 1024) return;
-      
-      const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-      const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-      heroVisual.style.transform = `translateY(-50%) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-    });
-
-    document.addEventListener('mouseleave', () => {
-      const heroVisual = document.querySelector('.hero-visual');
-      if (heroVisual) {
-        heroVisual.style.transform = 'translateY(-50%)';
-      }
-    });
-
-    // ===== REDUCED MOTION SUPPORT =====
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('*').forEach(el => {
-        el.style.transition = 'none';
-        el.style.animation = 'none';
-      });
-    }
-  </script>
 </body>
 </html>
